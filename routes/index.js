@@ -28,7 +28,7 @@ router.get("/notes", (req, res) => {
 
 // if we don't have a URL send them to our index html page 
 router.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../../public/index.html"));
+    res.send(404);
 });
 
 module.exports = router;
