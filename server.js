@@ -4,11 +4,13 @@ const express = require('express');
 const path = require("path");
 const fs = require("fs");
 
+//declaring which port we will listen on 
+const PORT = process.env.PORT || 3001;
+
 //intializing express server 
 const app = express();
 
-//declaring which port we will listen on 
-const PORT = process.env.PORT || 3001;
+
 
 // parse incoming string or array data
 app.use(express.urlencoded({ extended: true }));
