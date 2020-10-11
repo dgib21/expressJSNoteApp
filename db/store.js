@@ -3,8 +3,9 @@
 
 const util = require("util"); 
 const fs = require("fs"); 
-const uuidv1 = require("uuid/v1"); 
-const { json } = require("express");
+const uuidv1 = require("uuidv1"); 
+
+ const { json } = require("express");
 
 //creates asynchronous versions of fs.read file and fs.write file 
 const readFileAsync = util.promisify(fs.readFile); 
@@ -14,17 +15,17 @@ class Store {
     //read method 
     read() {
         //reading from the db json file using utf encoding 
-        return readFileAsync("./db.json", "utf8"); 
+         return readFileAsync('./db/db.json', "utf8"); 
 
     }
 //writing the note to json db file 
     write(addNote) {
-        return writeFileAsync("./db.json", JSON.stringify(addNote)); 
+        return writeFileAsync('./db/db.json', JSON.stringify(addNote)); 
     }
 
     //get note method 
     getNotes() {
-        return this.read()
+         return this.read()
         .then(response => {
             let parseNotes 
            try{
@@ -35,7 +36,9 @@ class Store {
            } 
            return parseNotes; 
 
-        })
+       })
+
+        
     }
 
 //taking in the note to add it to the json file(used write)

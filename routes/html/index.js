@@ -1,15 +1,3 @@
-//   //displays our home page(index.html)
-//   app.get('/', (req, res) => {
-//     res.sendFile(path.join(__dirname, './public/assets/index.html'));
-//   });
-// //displays the animals page 
-//   app.get('/animals', (req, res) => {
-//     res.sendFile(path.join(__dirname, './public/assets/animals.html'));
-//   });
-// //displays the animals page 
-//   app.get('/zookeepers', (req, res) => {
-//     res.sendFile(path.join(__dirname, './public/assets/zookeepers.html'));
-//   });
 
 //requiring path 
 const path = require("path");

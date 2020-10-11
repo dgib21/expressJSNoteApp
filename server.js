@@ -4,6 +4,9 @@ const express = require('express');
 const path = require("path");
 const fs = require("fs");
 
+ const apiRoutes = require('./routes/apiRoutes');
+const htmlRoutes = require('./routes/html');
+
 //declaring which port we will listen on 
 const PORT = process.env.PORT || 3001;
 
@@ -18,6 +21,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 //makes css files availbale to the server 
 app.use(express.static('public'));
+
+// Use apiRoutes
+app.use('/api', apiRoutes);
+app.use('/', htmlRoutes);
 
 
 // code to have the application listening for request 
